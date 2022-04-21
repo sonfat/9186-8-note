@@ -1,30 +1,46 @@
 <class 'pandas.core.frame.DataFrame'>
-RangeIndex: 5000 entries, 0 to 4999
-Data columns (total 7 columns):
-Avg. Area Income                5000 non-null float64
-Avg. Area House Age             5000 non-null float64
-Avg. Area Number of Rooms       5000 non-null float64
-Avg. Area Number of Bedrooms    5000 non-null float64
-Area Population                 5000 non-null float64
-Price                           5000 non-null float64
-Address                         5000 non-null object
-dtypes: float64(6), object(1)
-memory usage: 273.5+ KB
-(   Avg. Area Income  ...                                            Address
-0      79545.458574  ...  208 Michael Ferry Apt. 674\nLaurabury, NE 3701...
-1      79248.642455  ...  188 Johnson Views Suite 079\nLake Kathleen, CA...
-2      61287.067179  ...  9127 Elizabeth Stravenue\nDanieltown, WI 06482...
-3      63345.240046  ...                          USS Barnett\nFPO AP 44820
-4      59982.197226  ...                         USNS Raymond\nFPO AE 09386
+RangeIndex: 41199 entries, 0 to 41198
+Data columns (total 21 columns):
+age               41197 non-null float64
+job               41199 non-null object
+marital           41199 non-null object
+education         41199 non-null object
+default           41199 non-null object
+housing           41199 non-null object
+loan              41199 non-null object
+contact           41193 non-null object
+month             41199 non-null object
+day_of_week       41199 non-null object
+duration          41192 non-null float64
+campaign          41199 non-null int64
+pdays             41199 non-null int64
+previous          41199 non-null int64
+poutcome          41199 non-null object
+emp_var_rate      41199 non-null float64
+cons_price_idx    41199 non-null float64
+cons_conf_idx     41199 non-null float64
+euribor3m         41199 non-null float64
+nr_employed       41199 non-null float64
+y                 41199 non-null int64
+dtypes: float64(7), int64(4), object(10)
+memory usage: 6.6+ MB
+(    age          job  marital  ... euribor3m nr_employed  y
+0  44.0  blue-collar  married  ...     4.963      5228.1  0
+1  53.0   technician  married  ...     4.021      5195.8  0
+2  28.0   management   single  ...     0.729      4991.6  1
+3  39.0     services  married  ...     1.405      5099.1  0
+4  55.0      retired  married  ...     0.869      5076.2  1
 
-[5 rows x 7 columns], (5000, 7), None,        Avg. Area Income  Avg. Area House Age  ...  Area Population         Price
-count       5000.000000          5000.000000  ...      5000.000000  5.000000e+03
-mean       68583.108984             5.977222  ...     36163.516039  1.232073e+06
-std        10657.991214             0.991456  ...      9925.650114  3.531176e+05
-min        17796.631190             2.644304  ...       172.610686  1.593866e+04
-25%        61480.562388             5.322283  ...     29403.928702  9.975771e+05
-50%        68804.286404             5.970429  ...     36199.406689  1.232669e+06
-75%        75783.338666             6.650808  ...     42861.290769  1.471210e+06
-max       107701.748378             9.519088  ...     69621.713378  2.469066e+06
+[5 rows x 21 columns], (41199, 21), None,                 age      duration  ...   nr_employed             y
+count  41197.000000  41192.000000  ...  41199.000000  41199.000000
+mean      40.023812    258.274762  ...   5167.036455      0.112648
+std       10.434966    259.270089  ...     72.249592      0.316166
+min        1.000000      0.000000  ...   4963.600000      0.000000
+25%       32.000000    102.000000  ...   5099.100000      0.000000
+50%       38.000000    180.000000  ...   5191.000000      0.000000
+75%       47.000000    319.000000  ...   5228.100000      0.000000
+max      104.000000   4918.000000  ...   5228.100000      1.000000
 
-[8 rows x 6 columns])
+[8 rows x 11 columns])
+
+Process finished with exit code 0
