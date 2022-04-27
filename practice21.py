@@ -36,25 +36,37 @@ y_prediction = linear_model.predict(X_test[['Humidity']])
 
 
 
-import matplotlib.pyplot as plt
-from scipy.stats import pearsonr
+# import matplotlib.pyplot as plt
+# from scipy.stats import pearsonr
 # plt.scatter(y_test, y_prediction)
 # plt.xlabel('Y Test(True Value)')
 # plt.ylabel('Y Prediction (Prediction Value)')
-
-pearson_value = pearsonr(y_test, y_prediction)[0]
-
+#
+# pearson_value = pearsonr(y_test, y_prediction)[0]
+#
 # plt.title('True value VS Prediction Value (Pearson value = %0.2f ) '% (pearson_value))
 # print(pearson_value)
 # plt.show()
 
-import seaborn as sbn
-from scipy.stats import shapiro
-shapiro_p_value = shapiro(y_test-y_prediction)
-sbn.distplot((y_test-y_prediction), bins=50)
-plt.xlabel('Residuals')
-plt.ylabel('Density')
-plt.show()
-# print("{0:0.3f}".format(shapiro_p_value))
-# sbn.distplot()
+# import seaborn as sbn
+# from scipy.stats import shapiro
+# shapiro_p_value = shapiro(y_test-y_prediction)
+# sbn.distplot((y_test-y_prediction), bins=50)
+# plt.xlabel('Residuals')
+# plt.ylabel('Density')
+# plt.show()
+# # print("{0:0.3f}".format(shapiro_p_value))
+# # sbn.distplot()
 
+# 计算平均绝对误差、均方误差、均方根差和拟合度
+from sklearn import metrics
+
+metrics_df = pd.DataFrame({'Metric': ['MAE',
+                                      'MSE',
+                                      'RMSE',
+                                      'R-Squared'],
+                           'Value':[metrics.mean_absolute_error(y_test, y_prediction),
+                                    metrics.mean_squared_error(y_test, y_prediction),
+                                    np.sqrt(metrics.mean_squared_error(y_test, y_prediction)),
+                                    metrics.explained_variance_score(y_test, y_prediction)]})
+print(metrics_df)
